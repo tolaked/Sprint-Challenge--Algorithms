@@ -7,12 +7,11 @@ def count_th(word):
 
     if len(word) < 2:
         return 0
-
-    if word[0] == 't' and word[1] == 'h':
-        print(count_th(word[1:]))
-        return count_th(word[1:]) + 1
-    else:
-        return count_th(word[1:]) 
+    combo = 'th'
+    if combo not in word:
+        return 0
+    index = word.find(combo) + 1
+    return count_th(word[index:]) + 1
 
 
     # TBC
